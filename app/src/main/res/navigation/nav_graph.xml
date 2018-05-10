@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.smartcare.jetpack.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_helloFragment"
+            app:destination="@id/helloFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_fooFragment"
+            app:destination="@id/fooFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.smartcare.jetpack.HelloFragment"
+        android:label="Hello Fragment"
+        tools:layout="@layout/fragment_hello" />
+    <fragment
+        android:id="@+id/fooFragment"
+        android:name="com.smartcare.jetpack.FooFragment"
+        android:label="Foo Fragment"
+        tools:layout="@layout/fragment_foo">
+        <action
+            android:id="@+id/action_fooFragment_to_barFragment"
+            app:destination="@id/barFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/barFragment"
+        android:name="com.smartcare.jetpack.BarFragment"
+        android:label="Bar Fragment"
+        tools:layout="@layout/fragment_bar" />
+</navigation>
